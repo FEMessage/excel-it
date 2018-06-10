@@ -1,20 +1,30 @@
 {
-  "name": "vue-sfc-rollup",
-  "description": "Quickly generate redistributable components with Rollup",
+  "name": "vue-sfc-template",
+  "description": "Quickly generate redistributable vue sfc components",
+  "version": "0.1.0",
   "author": "Michael Dodge",
+  "contributors": ["https://github.com/FEMessage"],
   "license": "ISC",
-  "version": "0.3.1",
-  "bin": {
-    "sfc-rollup-init": "./sfc-init.js"
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/FEMessage/vue-sfc-template.git"
   },
-  "dependencies": {
-    "readline-sync": "^1.4.9"
-  },
+  "homepage": "https://github.com/FEMessage/vue-sfc-template.git",
   "keywords": [
     "vue",
+    "sfc",
     "template",
     "compiler",
     "rollup"
   ],
-  "homepage": "https://github.com/team-innovation/vue-sfc-rollup"
+  "bin": {
+    "init": "./init.js"
+  },
+  "dependencies": {
+    "readline-sync": "^1.4.9"
+  },
+  "engines": {
+    "node": ">= 8.2.0",
+    "npm": ">= 5.2.0"
+  }
 }
