@@ -1,5 +1,5 @@
 {
-  "name": "{{npmName}}",
+  "name": "{{componentName}}",
   "version": "1.0.0",
   "description": "",
   "author": "https://github.com/FEMessage",

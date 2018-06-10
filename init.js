@@ -33,9 +33,12 @@ const ensureDirectoryExists = (filePath) => {
 
 // Prompt user for input to populate template files
 const npmName = readlineSync.question('What is the npm name of your component? ');
-const componentName = readlineSync.question('What is the kebab-case tag name for your component? ('+kebabcase(npmName)+') ', {
-    defaultInput: kebabcase(npmName),
-});
+// const componentName = readlineSync.question('What is the kebab-case tag name for your component? ('+kebabcase(npmName)+') ', {
+//     defaultInput: kebabcase(npmName),
+// });
+
+const componentName = kebabcase(npmName)
+
 const savePath = readlineSync.questionPath('Enter a location to save the component files: (./'+componentName+') ', {
     defaultInput: path.join(process.cwd(), componentName),
     exists: false,
