@@ -93,9 +93,9 @@ Object.keys(paths).forEach((key) => {
     fs.writeFileSync(paths[key], newFiles[key]);
 });
 
-const hiddenFiles = ['.editorconfig', '.gitignore', '.npmignore', '.prettierignore', '.prettierrc', '.babelrc']
+const copyFiles = ['.editorconfig', '.gitignore', '.npmignore', '.prettierignore', '.prettierrc', '.babelrc', 'styleguide.config.js']
 
-hiddenFiles.forEach(file => {
+copyFiles.forEach(file => {
   let src = path.join(__dirname, 'templates', file)
   let dest = path.join(savePath, file)
   fs.writeFileSync(dest, fs.readFileSync(src))

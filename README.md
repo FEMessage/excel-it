@@ -22,6 +22,12 @@ yarn
 # run a test
 npm run test
 
+# develop your sfc doc
+npm run styleguide
+
+# build your sfc doc
+npm run doc
+
 # build your sfc
 npm run build
 
