@@ -93,12 +93,20 @@ Object.keys(paths).forEach((key) => {
     fs.writeFileSync(paths[key], newFiles[key]);
 });
 
-const copyFiles = ['.editorconfig', '.gitignore', '.npmignore', '.prettierignore', '.prettierrc', '.babelrc', 'styleguide.config.js']
+const copyFiles = ['.editorconfig', '.prettierignore', '.prettierrc', '.babelrc', 'styleguide.config.js']
 
 copyFiles.forEach(file => {
   let src = path.join(__dirname, 'templates', file)
   let dest = path.join(savePath, file)
   fs.writeFileSync(dest, fs.readFileSync(src))
+})
+
+const ignoreFiles = ['gitignore', 'npmignore']
+
+ignoreFiles.forEach(file => {
+    let src = path.join(__dirname, 'templates', file)
+    let dest = path.join(savePath, '.' + file)
+    fs.writeFileSync(dest, fs.readFileSync(src))
 })
 
 
