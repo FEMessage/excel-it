@@ -1,5 +1,5 @@
 {
-  "name": "vue-sfc-template",
+  "name": "vue-sfc-cli",
   "description": "Quickly generate redistributable vue sfc components",
   "version": "0.1.0",
   "author": "Michael Dodge",
