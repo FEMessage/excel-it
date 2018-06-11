@@ -89,7 +89,7 @@ Object.keys(paths).forEach((key) => {
 });
 
 // copyFiles
-const copyFiles = ['.editorconfig', '.gitignore', '.npmignore', '.prettierignore', '.prettierrc']
+const copyFiles = ['.editorconfig', '.gitignore', '.npmignore', '.prettierignore', '.prettierrc', '.babelrc']
 
 copyFiles.forEach(file => {
   let src = path.join(__dirname, 'templates', file)
