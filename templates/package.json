@@ -18,6 +18,7 @@
   },
 
   "scripts": {
+    "test": "jest",
     "build": "npm run build:unpkg & npm run build:es & npm run build:umd",
     "build:umd":
       "rollup --config build/rollup.config.js --format umd --file dist/{{componentName}}.umd.js",
@@ -41,7 +42,20 @@
     "vue-template-compiler": "^2.5.16",
     "husky": "^0.14.3",
     "prettier": "1.12.1",
-    "pretty-quick": "^1.4.1"
+    "pretty-quick": "^1.4.1",
+    "@vue/test-utils": "^1.0.0-beta.16",
+    "babel-jest": "^23.0.1",
+    "babel-preset-env": "^1.7.0",
+    "jest": "^23.1.0",
+    "vue-jest": "^2.6.0"
+  },
+
+  "jest": {
+    "moduleFileExtensions": ["js", "vue"],
+    "transform": {
+      "^.+\\.js$": "./node_modules/babel-jest",
+      "^.+\\.vue$": "./node_modules/vue-jest"
+    }
   },
 
   "engines": {
