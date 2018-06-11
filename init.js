@@ -88,6 +88,16 @@ Object.keys(paths).forEach((key) => {
     fs.writeFileSync(paths[key], newFiles[key]);
 });
 
+// copyFiles
+const copyFiles = ['.editorconfig', '.gitignore', '.npmignore']
+
+copyFiles.forEach(file => {
+  let src = path.join(__dirname, 'templates', file)
+  let dest = path.join(savePath, file)
+  fs.writeFileSync(dest, fs.readFileSync(src))
+})
+
+
 // Display completion messages
 console.log(
     '\n' +
