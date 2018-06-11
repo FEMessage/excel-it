@@ -53,11 +53,15 @@ const vars = {
     componentName,
     componentNamePascal,
 };
+
+const testFileName = 'index.test.js'
+
 const newFiles = {
     package: '',
     rollupConfig: '',
     indexjs: '',
     component: '',
+    testjs: fs.readFileSync(path.join(__dirname, 'templates', 'test', testFileName)),
 };
 newFiles.package = replaceVars(
     fs.readFileSync(path.join(__dirname, 'templates', 'package.json')).toString(),
@@ -81,6 +85,7 @@ const paths = {
     rollupConfig: path.join(savePath, 'build', 'rollup.config.js'),
     indexjs: path.join(savePath, 'src', 'index.js'),
     component: path.join(savePath, 'src', componentName + '.vue'),
+    testjs: path.join(savePath, 'test', testFileName)
 };
 
 Object.keys(paths).forEach((key) => {
@@ -88,10 +93,9 @@ Object.keys(paths).forEach((key) => {
     fs.writeFileSync(paths[key], newFiles[key]);
 });
 
-// copyFiles
-const copyFiles = ['.editorconfig', '.gitignore', '.npmignore', '.prettierignore', '.prettierrc', '.babelrc']
+const hiddenFiles = ['.editorconfig', '.gitignore', '.npmignore', '.prettierignore', '.prettierrc', '.babelrc']
 
-copyFiles.forEach(file => {
+hiddenFiles.forEach(file => {
   let src = path.join(__dirname, 'templates', file)
   let dest = path.join(savePath, file)
   fs.writeFileSync(dest, fs.readFileSync(src))
