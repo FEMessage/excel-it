@@ -19,7 +19,10 @@ yarn
 # rollup-plugin-vue requires node-sass, so installation may take 4~5 minutes...
 # so you may have a cup of tee
 
-# Do dev stuff...
+# run a test
+npm run test
+
+# build your sfc
 npm run build
 
 # Ready to publish!
