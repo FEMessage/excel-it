@@ -5,14 +5,11 @@
 
 <script>
 export default {
-    name: '{{componentNamePascal}}',
-    props: {
-
-    },
-    data() {
-        return {
-        }
-    }
+  name: '{{componentNamePascal}}',
+  props: {},
+  data() {
+    return {}
+  }
 }
 </script>
 
