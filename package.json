@@ -22,9 +22,6 @@
   "bin": {
     "init": "./init.js"
   },
-  "files": [
-    "templates"
-  ],
   "dependencies": {
     "readline-sync": "^1.4.9"
   },
