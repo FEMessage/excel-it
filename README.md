@@ -9,8 +9,13 @@ Node.js 8.x
 ```bash
 npx vue-sfc-cli init
 
-# fill in prompts
+# 接下来会有一串的提示，请务必填写
+# 推荐kebab-case风格，小写字母，多个单词用-（dash）分隔，如my-component
+
+# 填充完提示后
 cd my-component
+
+# 使用vue-cli 3.x 开发
 vue serve ./src/my-component.vue # Or other live-refresh coding
 
 # to use precommit hook
