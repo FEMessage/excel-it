@@ -2,7 +2,10 @@
 
 vue-sfc-cli exists to provide the minimal setup necessary to compile a Vue Single File Component (SFC) into a form ready to share via npm.
 
-## TL;DR
+## requirement
+Node.js 8.x
+
+## Usage
 ```bash
 npx vue-sfc-cli init
 
