@@ -57,6 +57,8 @@
     "stylus-loader": "^3.0.2"
   },
 
+  "files": ["src", "dist", "yarn.lock"],
+
   "jest": {
     "moduleFileExtensions": ["js", "vue"],
     "transform": {

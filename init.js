@@ -101,7 +101,7 @@ copyFiles.forEach(file => {
   fs.writeFileSync(dest, fs.readFileSync(src))
 })
 
-const ignoreFiles = ['gitignore', 'npmignore']
+const ignoreFiles = ['gitignore']
 
 ignoreFiles.forEach(file => {
     let src = path.join(__dirname, 'templates', file)
