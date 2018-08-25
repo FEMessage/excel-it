@@ -8,5 +8,11 @@
         ["env", { "targets": { "node": "current" }}]
       ]
     }
-  }
+  },
+  "plugins": [
+    ["transform-runtime", {
+      "polyfill": flse,
+      "regenerator": true
+    }]
+  ]
 }
