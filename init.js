@@ -73,7 +73,7 @@ const newFiles = {
 }
 
 newFiles.package = replaceVars(
-  fs.readFileSync(path.join(__dirname, 'templates', 'package.json')).toString(),
+  fs.readFileSync(path.join(__dirname, 'templates', 'package-json')).toString(),
   vars
 )
 newFiles.rollupConfig = replaceVars(
