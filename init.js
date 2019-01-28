@@ -111,6 +111,10 @@ newFiles.license = replaceVars(
   fs.readFileSync(path.join(__dirname, 'templates', 'LICENSE')).toString(),
   vars
 )
+newFiles.readme = replaceVars(
+  fs.readFileSync(path.join(__dirname, 'templates', 'README.md')).toString(),
+  vars
+)
 
 // output files
 const paths = {
@@ -122,6 +126,7 @@ const paths = {
   storybookConfig: path.join(savePath, '.storybook', 'config.js'),
   story: path.join(savePath, 'stories', 'index.js'),
 	license: path.join(savePath, 'LICENSE'),
+	readme: path.join(savePath, 'README.md'),
 }
 
 Object.keys(paths).forEach(key => {
