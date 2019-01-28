@@ -15,14 +15,14 @@ npx vue-sfc-cli init
 # 填充完提示后
 cd my-component
 
-# 使用vue-cli 3.x 开发
-vue serve ./src/my-component.vue # Or other live-refresh coding
-
 # to use precommit hook
 git init
 
 # install dependencies
 yarn
+
+# dev
+yarn story
 
 # rollup-plugin-vue requires node-sass, so installation may take 4~5 minutes...
 # so you may have a cup of tee
