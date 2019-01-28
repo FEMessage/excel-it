@@ -60,7 +60,8 @@ const componentNamePascal = pascalify(componentName)
 const vars = {
   npmName,
   componentName,
-  componentNamePascal
+  componentNamePascal,
+	licenseYear: new Date().getFullYear()
 }
 
 const testFileName = 'index.test.js'
@@ -106,6 +107,10 @@ newFiles.story = replaceVars(
   fs.readFileSync(path.join(__dirname, 'templates', 'story.js')).toString(),
   vars
 )
+newFiles.license = replaceVars(
+  fs.readFileSync(path.join(__dirname, 'templates', 'LICENSE')).toString(),
+  vars
+)
 
 // output files
 const paths = {
@@ -115,7 +120,8 @@ const paths = {
   component: path.join(savePath, 'src', componentName + '.vue'),
   testjs: path.join(savePath, 'test', testFileName),
   storybookConfig: path.join(savePath, '.storybook', 'config.js'),
-  story: path.join(savePath, 'stories', 'index.js')
+  story: path.join(savePath, 'stories', 'index.js'),
+	license: path.join(savePath, 'LICENSE'),
 }
 
 Object.keys(paths).forEach(key => {
