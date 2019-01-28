@@ -23,6 +23,9 @@
 
 ## Demo
 
+* [online demo](https://femessage.github.io/{{componentName}}/storybook/)
+* [full api doc](https://femessage.github.io/{{componentName}}/)
+
 [⬆ Back to Top](#table-of-contents)
 
 ## Documentation
