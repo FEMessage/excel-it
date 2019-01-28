@@ -11,7 +11,7 @@
 - **[Install](#install)**
 - **[Example](#example)**
 - **[Reference](#reference)**
-- **[License](license)**
+- **[License](#license)**
 
 ## Introduction
 
