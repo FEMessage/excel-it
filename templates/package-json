@@ -9,7 +9,7 @@
     "url": "https://github.com/FEMessage/{{componentName}}.git"
   },
   "keywords": ["vue", "sfc", "component"],
-   "files": ["src", "dist", "yarn.lock"],
+  "files": ["src", "dist", "yarn.lock"],
 
   "main": "dist/{{componentName}}.umd.js",
   "module": "dist/{{componentName}}.esm.js",
