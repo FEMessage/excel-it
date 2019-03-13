@@ -9,6 +9,7 @@
     "url": "https://github.com/FEMessage/{{componentName}}.git"
   },
   "keywords": ["vue", "sfc", "component"],
+   "files": ["src", "dist", "yarn.lock"],
 
   "main": "dist/{{componentName}}.umd.js",
   "module": "dist/{{componentName}}.esm.js",
@@ -61,9 +62,6 @@
     "stylus-loader": "^3.0.2",
     "@storybook/vue": "^3.4.10"
   },
-
-  "files": ["src", "dist", "yarn.lock"],
-
   "jest": {
     "moduleFileExtensions": ["js", "vue"],
     "transform": {
