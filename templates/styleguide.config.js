@@ -1,3 +1,5 @@
+const { VueLoaderPlugin } = require('vue-loader')
+
 module.exports = {
   components: 'src/*.vue',
   ribbon: {
@@ -20,7 +22,10 @@ module.exports = {
           use: ['style-loader', 'css-loader', 'stylus-loader']
         }
       ]
-    }
+    },
+    plugins: [
+      new VueLoaderPlugin()
+    ]
   },
   showUsage: true,
   showCode: true,
