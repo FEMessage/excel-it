@@ -3,22 +3,14 @@
   "description": "Quickly generate redistributable vue sfc components",
   "version": "0.6.0",
   "author": "Michael Dodge",
-  "contributors": [
-    "https://github.com/FEMessage"
-  ],
+  "contributors": ["https://github.com/FEMessage"],
   "license": "ISC",
   "repository": {
     "type": "git",
     "url": "https://github.com/FEMessage/vue-sfc-template.git"
   },
   "homepage": "https://github.com/FEMessage/vue-sfc-template.git",
-  "keywords": [
-    "vue",
-    "sfc",
-    "template",
-    "compiler",
-    "rollup"
-  ],
+  "keywords": ["vue", "sfc", "template", "compiler", "rollup"],
   "bin": {
     "init": "./init.js"
   },
@@ -26,7 +18,7 @@
     "readline-sync": "^1.4.9"
   },
   "engines": {
-    "node": ">=8.1.2 <=8.11",
+    "node": ">=8.1.2",
     "npm": ">=5.2.0"
   }
 }
