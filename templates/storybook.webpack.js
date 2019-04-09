@@ -1,6 +1,6 @@
 module.exports = ({ config }) => {
   config.module.rules.push({
-    test: /.styl(us)?/,
+    test: /\.styl(us)?$/,
     loader: 'stylus-loader'
   })
 
