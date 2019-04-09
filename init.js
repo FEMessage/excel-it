@@ -103,6 +103,12 @@ newFiles.storybookConfig = replaceVars(
     .toString(),
   vars
 )
+newFiles.storybookWebpack = replaceVars(
+  fs
+    .readFileSync(path.join(__dirname, 'templates', 'storybook.webpack.js'))
+    .toString(),
+  vars
+)
 newFiles.story = replaceVars(
   fs.readFileSync(path.join(__dirname, 'templates', 'story.js')).toString(),
   vars
@@ -124,6 +130,7 @@ const paths = {
   component: path.join(savePath, 'src', componentName + '.vue'),
   testjs: path.join(savePath, 'test', testFileName),
   storybookConfig: path.join(savePath, '.storybook', 'config.js'),
+  storybookWebpack: path.join(savePath, '.storybook', 'webpack.config.js'),
   story: path.join(savePath, 'stories', 'index.js'),
 	license: path.join(savePath, 'LICENSE'),
 	readme: path.join(savePath, 'README.md'),
