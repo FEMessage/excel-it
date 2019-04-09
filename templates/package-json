@@ -67,6 +67,11 @@
     "vue-template-compiler": "^2.5.16",
     "webpack": "^4.29.6"
   },
+
+  "publishConfig": {
+    "access": "public"
+  }
+
   "jest": {
     "moduleFileExtensions": ["js", "vue"],
     "transform": {
