@@ -1,22 +1,30 @@
 {
   "name": "vue-sfc-cli",
   "description": "Quickly generate redistributable vue sfc components",
-  "version": "0.6.0",
+  "version": "0.7.0",
   "author": "Michael Dodge",
-  "contributors": ["https://github.com/FEMessage"],
+  "contributors": [
+    "https://github.com/FEMessage"
+  ],
   "license": "ISC",
   "repository": {
     "type": "git",
     "url": "https://github.com/FEMessage/vue-sfc-cli.git"
   },
   "homepage": "https://github.com/FEMessage/vue-sfc-cli.git",
-  "keywords": ["vue", "sfc", "template", "cli", "generator"],
+  "keywords": [
+    "vue",
+    "sfc",
+    "template",
+    "cli",
+    "generator"
+  ],
   "bin": {
     "init": "./init.js"
   },
-	"scripts": {
-	  "test": "echo \"Info: no test specified\""
-	},
+  "scripts": {
+    "test": "echo \"Info: no test specified\""
+  },
   "dependencies": {
     "readline-sync": "^1.4.9"
   },
