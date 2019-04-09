@@ -1,0 +1,11 @@
+language: node_js
+node_js:
+  - lts/*
+git:
+  depth: 3
+deploy:
+  on:
+    branch: master
+    tags: true
+  provider: npm
+  email: "levy9527@qq.com"
