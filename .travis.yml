@@ -6,7 +6,7 @@ git:
 deploy:
   on:
     branch: master
-    tags: true
+    # tags: true
   provider: npm
   email: levy9527@qq.com
   api_key:
