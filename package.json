@@ -14,6 +14,9 @@
   "bin": {
     "init": "./init.js"
   },
+	"scripts": {
+	  "test": "echo \"Info: no test specified\""
+	},
   "dependencies": {
     "readline-sync": "^1.4.9"
   },
