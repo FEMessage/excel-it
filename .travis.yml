@@ -1,6 +1,6 @@
 language: node_js
 node_js:
-  - lts/*
+- lts/*
 git:
   depth: 3
 deploy:
@@ -8,4 +8,6 @@ deploy:
     branch: master
     tags: true
   provider: npm
-  email: "levy9527@qq.com"
+  email: levy9527@qq.com
+  api_key:
+    secure: ZzDJ4Kch/cPVA0WRz2/BX+bd143DSXuYl2cT6dlKUfwsAx+vW+XvUgEgF1imaTQVx4EdcM5H0PIUWg1E4nJ5EJZxY9VWWaaAN5KqDaO76RUz06HIiboSr0zh5ukVDXsL8Ppdmu1s11OVl1qshs9d6SwAsaEdQxnMmtpc0fPhZATD9WyeSs6W76TvjV/YbvcAMmdcrYw0tm4eUhjyZyrqsnghAT4ORDTU5iwWWrXrhuM3siGaHC0E9BqYA2mN8RMQRrYLqokYr6vr428JaoQrra3vOwbJNdas8sAl2lrpM1/wGUKCC4pR4VWEXdhOocy0Yxr1t5Du+GnYBFWMgp0pBb07lP1DLIZXQi3eJdQSdnkeuo9ZW9HNhmppiGQc6NtR5YwJKQ8C6GQUpmG28N0nUmM6bfIm7B87CpDXkmkmxGkzdt0Oy25QhySYsqEk/W2RpeK2UG0+smRAF1+LmSWIk3cfDGszaAwm9JB1MCpVrQ45LqcnasSAkx+EZmo2eZ8H6M9bBe1rlWCyXrbkm9169IlDdksVwavkY5AG3AjIDw2X1qdMnVC6QG2s5BFjx7ADfmulo0lXkO//nySSKENdttG7JcPVO5hn7pImACNn2sTCN2vlKd0yBujLBJbIgENCZsDQ/pSYMq5yWfN0ot5kSnyxCLSW0WY8zTFzlKH8Cls=
