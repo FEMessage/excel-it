@@ -152,7 +152,8 @@ const copyFiles = [
   '.editorconfig',
   '.prettierignore',
   '.prettierrc',
-  '.babelrc'
+  '.babelrc',
+  '.travis.yml'
 ]
 
 copyFiles.forEach(file => {
