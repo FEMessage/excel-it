@@ -41,7 +41,7 @@ const npmName = readlineSync.question(
 )
 // const componentName = readlineSync.question('What is the kebab-case tag name for your component? ('+kebabcase(npmName)+') ', {
 //     defaultInput: kebabcase(npmName),
-// });
+// })
 
 const componentName = kebabcase(npmName)
 
@@ -61,7 +61,7 @@ const vars = {
   npmName,
   componentName,
   componentNamePascal,
-	licenseYear: new Date().getFullYear()
+  licenseYear: new Date().getFullYear()
 }
 
 const testFileName = 'index.test.js'
@@ -103,6 +103,12 @@ newFiles.storybookConfig = replaceVars(
     .toString(),
   vars
 )
+newFiles.storybookWebpack = replaceVars(
+  fs
+    .readFileSync(path.join(__dirname, 'templates', 'storybook.webpack.js'))
+    .toString(),
+  vars
+)
 newFiles.story = replaceVars(
   fs.readFileSync(path.join(__dirname, 'templates', 'story.js')).toString(),
   vars
@@ -115,6 +121,12 @@ newFiles.readme = replaceVars(
   fs.readFileSync(path.join(__dirname, 'templates', 'README.md')).toString(),
   vars
 )
+newFiles.styleguide = replaceVars(
+  fs
+    .readFileSync(path.join(__dirname, 'templates', 'styleguide.config.js'))
+    .toString(),
+  vars
+)
 
 // output files
 const paths = {
@@ -124,9 +136,11 @@ const paths = {
   component: path.join(savePath, 'src', componentName + '.vue'),
   testjs: path.join(savePath, 'test', testFileName),
   storybookConfig: path.join(savePath, '.storybook', 'config.js'),
+  storybookWebpack: path.join(savePath, '.storybook', 'webpack.config.js'),
   story: path.join(savePath, 'stories', 'index.js'),
-	license: path.join(savePath, 'LICENSE'),
-	readme: path.join(savePath, 'README.md'),
+  license: path.join(savePath, 'LICENSE'),
+  readme: path.join(savePath, 'README.md'),
+  styleguide: path.join(savePath, 'styleguide.config.js')
 }
 
 Object.keys(paths).forEach(key => {
@@ -138,8 +152,7 @@ const copyFiles = [
   '.editorconfig',
   '.prettierignore',
   '.prettierrc',
-  '.babelrc',
-  'styleguide.config.js'
+  '.babelrc'
 ]
 
 copyFiles.forEach(file => {
