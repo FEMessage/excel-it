@@ -1,5 +1,6 @@
 # {{componentName}}
 
+[![Build Status](https://travis-ci.com/FEMessage/{{componentName}}.svg?branch=master)](https://travis-ci.com/FEMessage/{{componentName}})
 [![NPM Download](https://img.shields.io/npm/dm/@femessage/{{componentName}}.svg)](https://www.npmjs.com/package/@femessage/{{componentName}})
 [![NPM Version](https://img.shields.io/npm/v/@femessage/{{componentName}}.svg)](https://www.npmjs.com/package/@femessage/{{componentName}})
 [![NPM License](https://img.shields.io/npm/l/@femessage/{{componentName}}.svg)](https://github.com/FEMessage/{{componentName}}/blob/master/LICENSE)
