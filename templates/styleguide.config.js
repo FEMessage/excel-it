@@ -1,4 +1,4 @@
-const { VueLoaderPlugin } = require('vue-loader')
+const {VueLoaderPlugin} = require('vue-loader')
 
 module.exports = {
   components: 'src/*.vue',
@@ -19,17 +19,15 @@ module.exports = {
         },
         {
           test: /\.css$/,
-          use: ['style-loader', 'css-loader', 'stylus-loader']
+          loaders: ['style-loader', 'css-loader']
         },
         {
           test: /\.styl(us)?$/,
-          loader: 'stylus-loader'
+          loaders: ['vue-style-loader', 'css-loader', 'stylus-loader']
         }
       ]
     },
-    plugins: [
-      new VueLoaderPlugin()
-    ]
+    plugins: [new VueLoaderPlugin()]
   },
   showUsage: true,
   showCode: true,
