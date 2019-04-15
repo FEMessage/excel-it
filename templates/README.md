@@ -10,14 +10,14 @@
 
 ## Table of Contents
 
-- **[Introduction](#introduction)**
-- **[Feature](#feature)**
-- **[Demo](#demo)**
-- **[Documentation](#documentation)**
-- **[Install](#install)**
-- **[Example](#example)**
-- **[Reference](#reference)**
-- **[License](#license)**
+- [Introduction](#introduction)
+- [Feature](#feature)
+- [Demo](#demo)
+- [Documentation](#documentation)
+- [Install](#install)
+- [Example](#example)
+- [Reference](#reference)
+- [License](#license)
 
 ## Introduction
 
