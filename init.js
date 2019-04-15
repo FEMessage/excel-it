@@ -61,7 +61,8 @@ const vars = {
   npmName,
   componentName,
   componentNamePascal,
-  licenseYear: new Date().getFullYear()
+  licenseYear: new Date().getFullYear(),
+  cliVersion: require('./package.json').version
 }
 
 const testFileName = 'index.test.js'

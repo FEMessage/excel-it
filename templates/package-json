@@ -77,6 +77,8 @@
     }
   },
 
+  "vue-sfc-cli": "{{cliVersion}}",
+
   "engines": {
     "node": ">= 4.0.0",
     "npm": ">= 3.0.0"
