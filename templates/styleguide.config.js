@@ -1,10 +1,31 @@
 const {VueLoaderPlugin} = require('vue-loader')
+const path = require('path')
+const glob = require('glob')
+
+const demos = glob.sync('docs/!(basic).md')
+const demoSections = demos.map(filePath => ({
+  name: path.basename(filePath, '.md'),
+  content: filePath
+}))
 
 module.exports = {
-  components: 'src/*.vue',
+  styleguideDir: 'docs',
+  pagePerSection: true,
   ribbon: {
     url: 'https://github.com/FEMessage/{{componentName}}'
   },
+  sections: [
+    {
+      name: 'Components',
+      components: 'src/*.vue',
+      usageMode: 'expand'
+    },
+    {
+      name: 'Demo',
+      content: 'docs/basic.md',
+      sections: demoSections
+    }
+  ],
   webpackConfig: {
     module: {
       rules: [
@@ -27,9 +48,8 @@ module.exports = {
         }
       ]
     },
-    plugins: [new VueLoaderPlugin()]
-  },
-  showUsage: true,
-  showCode: true,
-  styleguideDir: 'docs'
+    plugins: [
+      new VueLoaderPlugin()
+    ]
+  }
 }

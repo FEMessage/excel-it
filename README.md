@@ -7,7 +7,7 @@
 
 vue-sfc-cli exists to provide the minimal setup necessary to compile a Vue Single File Component (SFC) into a form ready to share via npm.
 
-https://juejin.im/post/5b231f6ff265da595f0d2540
+[for detail look at this article](https://github.com/levy9527/blog/issues/2)
 
 ## requirement
 Node.js 8.x
@@ -28,25 +28,48 @@ git init
 # install dependencies
 yarn
 
-# dev
-yarn story
-
-# rollup-plugin-vue requires node-sass, so installation may take 4~5 minutes...
-# so you may have a cup of tee
-
-# run a test
-npm run test
-
-# develop your sfc doc
-npm run styleguide
-
-# build your sfc doc
-npm run doc
+# develop your sfc 
+yarn dev
 
 # build your sfc
-npm run build
+yarn build
 
 # Ready to publish!
+```
+
+## docs
+
+You can write *.md files host in `docs/` as code example.
+
+When you run `yarn dev` these markdown files will become live demos.
+
+Every time you add a new *.md file, you should re-run `yarn dev` to load new *.md file.
+
+## dotenv
+
+You might wanna use environment variable while development. 
+
+According to best practice, encourage using `dotenv` to config environment variable.
+
+```sh
+yarn add dotenv --dev
+```
+
+```js
+// styleguide.config.js
+const webpack = require('webpack')
+const dotenv = require('dotenv')
+
+module.exports = {
+  webpackConfig: {
+    // ...
+    plugins: [
+      new webpack.DefinePlugin({
+        'process.env': JSON.stringify(dotenv.config().parsed)
+      })
+    ]
+  }
+}
 ```
 
 ## prettier and precommit hook

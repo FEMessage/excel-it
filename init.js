@@ -97,22 +97,6 @@ newFiles.component = replaceVars(
     .toString(),
   vars
 )
-newFiles.storybookConfig = replaceVars(
-  fs
-    .readFileSync(path.join(__dirname, 'templates', 'storybook.config.js'))
-    .toString(),
-  vars
-)
-newFiles.storybookWebpack = replaceVars(
-  fs
-    .readFileSync(path.join(__dirname, 'templates', 'storybook.webpack.js'))
-    .toString(),
-  vars
-)
-newFiles.story = replaceVars(
-  fs.readFileSync(path.join(__dirname, 'templates', 'story.js')).toString(),
-  vars
-)
 newFiles.license = replaceVars(
   fs.readFileSync(path.join(__dirname, 'templates', 'LICENSE')).toString(),
   vars
@@ -127,6 +111,12 @@ newFiles.styleguide = replaceVars(
     .toString(),
   vars
 )
+newFiles.docsBasicDemo = replaceVars(
+  fs
+    .readFileSync(path.join(__dirname, 'templates', 'docs', 'basic.md'))
+    .toString(),
+  vars
+)
 
 // output files
 const paths = {
@@ -135,12 +125,10 @@ const paths = {
   indexjs: path.join(savePath, 'src', 'index.js'),
   component: path.join(savePath, 'src', componentName + '.vue'),
   testjs: path.join(savePath, 'test', testFileName),
-  storybookConfig: path.join(savePath, '.storybook', 'config.js'),
-  storybookWebpack: path.join(savePath, '.storybook', 'webpack.config.js'),
-  story: path.join(savePath, 'stories', 'index.js'),
   license: path.join(savePath, 'LICENSE'),
   readme: path.join(savePath, 'README.md'),
-  styleguide: path.join(savePath, 'styleguide.config.js')
+  styleguide: path.join(savePath, 'styleguide.config.js'),
+  docsBasicDemo: path.join(savePath, 'docs', 'basic.md')
 }
 
 Object.keys(paths).forEach(key => {
