@@ -45,15 +45,7 @@ const npmName = readlineSync.question(
 
 const componentName = kebabcase(npmName)
 
-const savePath = readlineSync.questionPath(
-  'Enter a location to save the component files: (./' + componentName + ') ',
-  {
-    defaultInput: path.join(process.cwd(), componentName),
-    exists: false,
-    isDirectory: true,
-    create: true
-  }
-)
+const savePath = path.join(process.cwd(), componentName)
 
 // Stop prompting for input, start processing
 const componentNamePascal = pascalify(componentName)
