@@ -142,7 +142,8 @@ const copyFiles = [
   '.prettierignore',
   '.prettierrc',
   '.babelrc',
-  '.travis.yml'
+  '.travis.yml',
+  '.grenrc.js'
 ]
 
 copyFiles.forEach(file => {
