@@ -13,10 +13,11 @@ script:
 cache: yarn
 deploy:
 - provider: pages
-  skip-cleanup: true
-  keep-history: true
   local-dir: docs
   github-token: $GITHUB_TOKEN
+  skip-cleanup: true
+  keep-history: true
 - provider: npm
   email: levy9527@qq.com
   api_key: $NPM_TOKEN
+  skip-cleanup: true
