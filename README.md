@@ -15,7 +15,7 @@ Node.js 8.x
 
 ## Usage
 ```bash
-npx vue-sfc-cli init
+npx vue-sfc-cli
 
 # 接下来会有一串的提示，请务必填写
 # 推荐kebab-case风格，小写字母，多个单词用-（dash）分隔，如my-component
