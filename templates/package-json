@@ -58,7 +58,7 @@
     "vue": "^2.5.16",
     "vue-jest": "^3.0.4",
     "vue-loader": "^15.7.0",
-    "vue-styleguidist": "^3.11.4",
+    "vue-styleguidist": "3.11.4",
     "vue-template-compiler": "^2.5.16",
     "webpack": "^4.29.6"
   },
