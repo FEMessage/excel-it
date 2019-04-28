@@ -29,7 +29,7 @@ git init
 # install dependencies
 yarn
 
-# develop your sfc 
+# develop your sfc
 yarn dev
 
 # build your sfc
@@ -48,7 +48,7 @@ Every time you add a new *.md file, you should re-run `yarn dev` to load new *.m
 
 ## dotenv
 
-You might wanna use environment variable while development. 
+You might wanna use environment variable while development.
 
 According to best practice, encourage using `dotenv` to config environment variable.
 
@@ -73,9 +73,40 @@ module.exports = {
 }
 ```
 
+## file-loader
+
+We use `file-loader` to handle font files by default.
+
+When you use a third-party library that contains font files like
+[Element-UI](https://element.eleme.io),
+you need to install `file-loader`:
+
+```sh
+yarn add file-loader -D
+```
+
+Then you can use Element UI without tears 😭.
+
+```js
+// styleguide/element.js
+import Vue from 'vue'
+import Elm from 'element-ui'
+import 'element-ui/lib/theme-chalk/index.css' // <- including font files
+
+Vue.use(Elm)
+```
+
+```js
+// styleguide.config.js
+module.exports = {
+  // ...
+  require: [
+    './styleguide/element.js'
+  ]
+}
+```
+
 ## prettier and precommit hook
 
 the generated scaffold use husky as tool for precommit hook, but it require you has `git init` first, that's why `git init` running before
 `yarn`
-
-
