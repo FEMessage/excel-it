@@ -6,12 +6,16 @@ const kleur = require('kleur')
 const path = require('path')
 const readline = require('readline-sync')
 
+const argv = process.argv.slice(2)
+
 /**
  * Prompt user for input to populate template files
  */
-const npmName = readline.question(
-  '✍️  What is the npm name of your component? '
-)
+const npmName = argv.includes('--test')
+  ? 'v-test'
+  : readline.question(
+    '✍️  What is the npm name of your component? '
+  )
 
 const componentName = kebabcasify(npmName)
 const outDir = path.join(process.cwd(), componentName)

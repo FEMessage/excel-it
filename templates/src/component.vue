@@ -1,5 +1,6 @@
 <template>
   <div class="{{componentName}}">
+    hello
   </div>
 </template>
 

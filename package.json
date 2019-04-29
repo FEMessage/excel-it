@@ -21,7 +21,8 @@
     "generator"
   ],
   "scripts": {
-    "test": "echo \"Info: no test specified\""
+    "test": "echo \"Info: no test specified\"",
+    "preview": "node init --test && cd v-test && yarn --registry=https://registry.npm.taobao.org && yarn doc"
   },
   "dependencies": {
     "fs-extra": "^7.0.1",
