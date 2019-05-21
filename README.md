@@ -13,8 +13,8 @@
 
 * **[excel-it](#excel-it)**
 * **[Introduction](#introduction)**
-* **[Install](#install)**
 * **[Documentation](#documentation)**
+* **[Install](#install)**
 * **[Example](#example)**
 * **[导出 excel](#export-excel)**
 * **[导入 excel](#import-excel)**
@@ -26,17 +26,17 @@
 
 [⬆ Back to Top](#table-of-contents)
 
-## Install
-
-```sh
-yarn add @femessage/excel-it
-```
-
 ## Documentation
 
 **[doc and online demo](https://femessage.github.io/excel-it/)**
 
 [⬆ Back to Top](#table-of-contents)
+
+## Install
+
+```sh
+yarn add @femessage/excel-it
+```
 
 ## Example
 
