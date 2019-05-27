@@ -11,24 +11,24 @@
 
 ## Table of Contents
 
-* [excel-it](#excel-it)
-  * [Table of Contents](#table-of-contents)
-  * [Introduction](#introduction)
-  * [Feature](#feature)
-  * [Install](#install)
-  * [Example](#example)
-  * [Documentation](#documentation)
-    * [exportExcel 方法说明](#exportexcel-方法说明)
-    * [importExcel 方法说明](#importexcel-方法说明)
-  * [License](#license)
+* **[excel-it](#excel-it)**
+* **[Introduction](#introduction)**
+* **[Documentation](#documentation)**
+* **[Install](#install)**
+* **[Example](#example)**
+  * **[导出 excel](#export-excel)**
+  * **[导入 excel](#import-excel)**
+* **[License](#license)**
 
 ## Introduction
 
-纯前端实现，经测试，1 万条数据导出，除去网络请求时间，导出的占用时间不超过 3 秒。
+纯前端实现导入导出 excel，经测试，1 万条数据导出，除去网络请求时间，导出的占用时间不超过 3 秒。
 
 [⬆ Back to Top](#table-of-contents)
 
-## Feature
+## Documentation
+
+**[doc and online demo](https://femessage.github.io/excel-it/)**
 
 [⬆ Back to Top](#table-of-contents)
 
@@ -40,10 +40,18 @@ yarn add @femessage/excel-it
 
 ## Example
 
-```js
-import { exportExcel, importExcel } from '@femessage/excel-it'
+### export-excel
 
-// 导出excel
+```html
+<template>
+    <button @click="handleExport">
+      导出Excel
+    </button>
+</template>
+
+<script>
+import { exportExcel } from '@femessage/excel-it'
+
 export default {
   data() {
     return {
@@ -66,8 +74,8 @@ export default {
     }
   },
   methods: {
-    exportExcel() {
-      ExportExcel({
+    handleExport() {
+      exportExcel({
         columns: this.columns,
         data: this.data,
         fileName: '导出excel'
@@ -77,45 +85,34 @@ export default {
     }
   }
 }
-
-<template>
-    <button type="success" @click="handleUpload">
-      选择要导入有表头的 .xlsx 表格
-    </button>
-</template>
-// 导入excel
-export default {
-    methods: {
-      handleUpload() {
-        importExcel([], (arr) => {
-            console.log(arr);  // 返回数据为多个sheet的数据，数据格式为[{columns:[...],data:[[...],...]}, ...]
-        })
-      }
-    }
-}
+</script>
 ```
 
-[⬆ Back to Top](#table-of-contents)
+### import-excel
 
-## Documentation
+```html
+<template>
+    <button @click="handleImport">
+      导入Excel
+    </button>
+</template>
 
-### exportExcel 方法说明
+<script>
+import { importExcel } from '@femessage/excel-it'
 
-| 参数     | 说明                                                                                      | 类型     | 可选值 | 默认值   |
-| -------- | ----------------------------------------------------------------------------------------- | -------- | ------ | -------- |
-| columns  | excel 表头数组，数据格式为[{label: '', props: ''}] 与 element-ui table 传入的数据格式一致 | Array    | -      | []       |
-| data     | excel 内容数组，数据格式字段名称需要跟 props 一致 与 element-ui table 传入的数据格式一致  | Number   | -      | 1        |
-| fileName | 文件名 default download                                                                   | Array    | -      | []       |
-| header   | 导出的表头名                                                                              | String   | -      | download |
-| merges   | 导出的表头合并的单元格, 数据格式['A1', 'E1']                                              | Array    | -      | []       |
-| callback | 文件下载后的回调函数                                                                      | Function | -      | ()=>{}   |
+export default {
+  methods: {
+    handleImport() {
+      importExcel([], (arr) => {
+          console.log(arr);  // 返回数据为多个sheet的数据，数据格式为[{columns:[...],data:[[...],...]}, ...]，具体请查阅文档
+      })
+    }
+  }
+}
+</script>
+```
 
-### importExcel 方法说明
-
-| 参数     | 说明                                                                            | 类型     | 可选值 | 默认值 |
-| -------- | ------------------------------------------------------------------------------- | -------- | ------ | ------ |
-| ignore   | 忽略导出的头部单元格范围，数据格式['A1', 'E1']                                  | Array    | -      | []     |
-| callback | 导入文件后的回调函数，返回的数据格式为：[{columns:[...],data:[[...],...]}, ...] | Function | -      | ()=>{} |
+**[更多例子请查阅文档](https://femessage.github.io/excel-it/)**
 
 [⬆ Back to Top](#table-of-contents)
 

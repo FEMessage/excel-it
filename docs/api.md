@@ -13,11 +13,11 @@
 
 | 参数     | 说明                                                                                        | 类型   | 默认值   |
 | -------- | ------------------------------------------------------------------------------------------- | ------ | -------- |
-| columns  | excel 表头数组，数据格式为[{label: '', prop: ''}] 与 element-ui table 传入的数据格式一致    | Array  | []       |
-| data     | excel 内容数组，数据格式字段名称 key 需要跟 prop 一致与 element-ui table 传入的数据格式一致 | Array  | []       |
+| columns  | excel 表头数组，数据格式为```[{label: '', prop: ''}]``` 与 element-ui table 传入的数据格式一致    | Array  | []       |
+| data     | excel 内容数组，数据格式字段名称 key 需要跟 prop 一致 与 element-ui table 传入的数据格式一致 | Array  | []       |
 | fileName | 导出的文件名                                                                     | String | download |
-| header   | 导出的表头名                                                                     | String |      -    |
-| merges   | 导出的表头合并的单元格, eg: ['A1', 'E1']                                                    | Array  | []       |
+| header   | 如果传入该值，那么该值将显示在导出的excel头部（第一行第一列），columns与data的内容会退到第二行之后显示                                          | String |      -    |
+| merges   | 导出的excel要合并单元格的范围， eg: ['A1', 'E1'] 那么A1到E1的单元格将会被合并                                                    | Array  | []       |
 
 <br/>
 <br/>
@@ -27,16 +27,16 @@
 
 | 参数     | 说明                                                                                                                | 类型     | 默认值             |
 | -------- | ------------------------------------------------------------------------------------------------------------------- | -------- | ------------------ |
-| ignore   | 忽略导入的头部单元格范围，eg: ['A1', 'E1']                                                                          | Array    | []                 |
-| callback | 导入文件后的回调函数，参数一是导入的excel数据，格式为包含sheet对象的数组，关于sheet对象可查看下面importExcel callback 参数 sheet对象 说明 | Function | ()=>{} |
+| ignore   | 要忽略的表头单元格范围，eg: ['A1', 'E1'] 那么excel中A1到E1的内容将不会被导入                                                                          | Array    | []                 |
+| callback | 导入文件后的回调函数，返回excel数据组成的数组，数组中的每一项对应一个[sheet](https://baike.baidu.com/item/%E5%B7%A5%E4%BD%9C%E8%A1%A8/2826887?fr=aladdin)的数据，格式为```[{columns:[], data:[{}]}, ...]``` | Function | ()=>{} |
 
 <br/>
 <br/>
 <br/>
 
-## importExcel callback 参数 sheet对象 说明
+## importExcel callback 参数说明
 
 | 属性名                 | 属性值说明                     | 类型   |
 | --------------------  | ------------------------ | ----- | ------ |
-| columns               | excel 表头（第一行）数据  | Array     |
-| data                  | excel 内容行数据             | Array    |
+| columns               | excel 第一行的数据  | Array     |
+| data                  | excel 第一行外其他行的数据             | Array    |
