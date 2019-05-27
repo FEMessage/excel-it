@@ -1,0 +1,45 @@
+{
+  "projectName": "excel-it",
+  "projectOwner": "FEMessage",
+  "repoType": "github",
+  "repoHost": "https://github.com",
+  "files": [
+    "README.md"
+  ],
+  "imageSize": 100,
+  "commit": false,
+  "commitConvention": "angular",
+  "contributors": [
+    {
+      "login": "OuZuYu",
+      "name": "OuZuYu",
+      "avatar_url": "https://avatars3.githubusercontent.com/u/26338853?v=4",
+      "profile": "http://67.216.223.155/resume/",
+      "contributions": [
+        "code",
+        "doc"
+      ]
+    },
+    {
+      "login": "Barretem",
+      "name": "Barretem",
+      "avatar_url": "https://avatars2.githubusercontent.com/u/47966933?v=4",
+      "profile": "https://github.com/Barretem",
+      "contributions": [
+        "code",
+        "doc"
+      ]
+    },
+    {
+      "login": "levy9527",
+      "name": "levy",
+      "avatar_url": "https://avatars3.githubusercontent.com/u/9384365?v=4",
+      "profile": "http://levy.work",
+      "contributions": [
+        "review",
+        "ideas"
+      ]
+    }
+  ],
+  "contributorsPerLine": 7
+}
