@@ -2,7 +2,7 @@ const {VueLoaderPlugin} = require('vue-loader')
 const path = require('path')
 const glob = require('glob')
 
-const demos = ['docs/basic.md', ...glob.sync('docs/!(basic).md')]
+const demos = glob.sync('docs/*.md')
 const demoSections = demos.map(filePath => ({
   name: path.basename(filePath, '.md'),
   content: filePath
