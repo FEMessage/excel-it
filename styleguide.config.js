@@ -1,20 +1,15 @@
 const {VueLoaderPlugin} = require('vue-loader')
 const path = require('path')
+const glob = require('glob')
 
-const docs = [
-  'export-excel',
-  'import-excel',
-  'import-multiple-sheets',
-  'import-header-excel'
-]
-
-const demoSections = docs.map(name => ({
-  name,
-  content: `docs/${name}.md`
+const demos = ['docs/basic.md', ...glob.sync('docs/!(basic).md')]
+const demoSections = demos.map(filePath => ({
+  name: path.basename(filePath, '.md'),
+  content: filePath
 }))
 
 module.exports = {
-  require: [path.join(__dirname, 'styleguide/global.requires.js')],
+  require: ['./styleguide/global.requires.js'],
   styleguideDir: 'docs',
   pagePerSection: true,
   ribbon: {
@@ -22,12 +17,12 @@ module.exports = {
   },
   sections: [
     {
-      name: 'Demo',
-      sections: demoSections
+      name: 'Api',
+      content: 'src/api.md'
     },
     {
-      name: 'Api',
-      content: 'docs/api.md'
+      name: 'Demo',
+      sections: demoSections
     }
   ],
   webpackConfig: {

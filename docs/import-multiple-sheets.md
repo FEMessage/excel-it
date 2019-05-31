@@ -21,13 +21,8 @@
 </template>
 
 <script>
-/*
-  由于vue-styleguidist不支持import，所以该例子使用require代替。
-  在vue中请使用 import
-*/
-
+// 在你的组件中导入模块使用。如下所示
 // import { importExcel } from '@femessage/excel-it'
-let { importExcel } = require('../src/index.js')
 
 export default {
   name: 'MultipleSheets',
