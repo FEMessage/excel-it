@@ -2,24 +2,17 @@
 
 ```vue
 <template>
-  <div>
-    <el-button
-      type="success"
-      @click="handleExportExcel"
-      style="padding: 8px 20px; cursor: pointer">
-      {{loading ? '加载中...' : '导出excel'}}
-    </el-button>
-  </div>
+  <el-button
+    type="success"
+    @click="handleExportExcel"
+    style="padding: 8px 20px; cursor: pointer">
+    {{loading ? '加载中...' : '导出excel'}}
+  </el-button>
 </template>
 
 <script>
-/*
-  由于vue-styleguidist不支持import，所以该例子使用require代替。
-  在vue中请使用 import
-*/
-
+// 在你的组件中导入模块使用。如下所示
 // import { exportExcel } from '@femessage/excel-it'
-let { exportExcel } = require('../src/index.js')
 
 export default {
   name: 'StaticJsonExportToExcel',
