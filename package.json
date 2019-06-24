@@ -13,9 +13,6 @@
   "main": "dist/excel-it.umd.js",
   "module": "dist/excel-it.esm.js",
   "unpkg": "dist/excel-it.min.js",
-  "browser": {
-    "./sfc": "src/excel-it.vue"
-  },
   "scripts": {
     "dev": "vue-styleguidist server",
     "doc": "vue-styleguidist build",
