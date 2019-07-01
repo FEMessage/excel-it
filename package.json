@@ -8,29 +8,22 @@
     "type": "git",
     "url": "https://github.com/FEMessage/excel-it.git"
   },
-  "keywords": [
-    "vue",
-    "sfc",
-    "component"
-  ],
-  "files": [
-    "src",
-    "dist",
-    "yarn.lock"
-  ],
+  "keywords": ["vue", "sfc", "component"],
+  "files": ["src", "dist", "yarn.lock"],
   "main": "dist/excel-it.umd.js",
   "module": "dist/excel-it.esm.js",
   "unpkg": "dist/excel-it.min.js",
-  "browser": {
-    "./sfc": "src/excel-it.vue"
-  },
   "scripts": {
     "dev": "vue-styleguidist server",
     "doc": "vue-styleguidist build",
-    "build": "npm run build:unpkg & npm run build:es & npm run build:umd & npm run doc",
-    "build:umd": "rollup --config build/rollup.config.js --format umd --file dist/excel-it.umd.js",
-    "build:es": "rollup --config build/rollup.config.js --format es --file dist/excel-it.esm.js",
-    "build:unpkg": "rollup --config build/rollup.config.js --format iife --file dist/excel-it.min.js",
+    "build":
+      "npm run build:unpkg & npm run build:es & npm run build:umd & npm run doc",
+    "build:umd":
+      "rollup --config build/rollup.config.js --format umd --file dist/excel-it.umd.js",
+    "build:es":
+      "rollup --config build/rollup.config.js --format es --file dist/excel-it.esm.js",
+    "build:unpkg":
+      "rollup --config build/rollup.config.js --format iife --file dist/excel-it.min.js",
     "precommit": "pretty-quick --staged",
     "stdver": "standard-version -m '[skip ci] chore(release): v%s'",
     "release": "gren release --override"
@@ -69,7 +62,7 @@
   "publishConfig": {
     "access": "public"
   },
-  "vue-sfc-cli": "1.7.0",
+  "vue-sfc-cli": "1.10.0",
   "engines": {
     "node": ">= 4.0.0",
     "npm": ">= 3.0.0"
