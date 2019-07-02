@@ -1,10 +1,10 @@
-# Excel-it
+# excel-it
 
 
 ![](https://cdn.nlark.com/yuque/0/2019/svg/224563/1561961436495-2947aa31-7bcb-4976-b3f9-ee7ce942dfe0.svg#align=left&display=inline&height=20&originHeight=20&originWidth=98&size=0&status=done&width=98) [![](https://img.shields.io/npm/dm/@femessage/export-excel.svg#align=left&display=inline&height=20&originHeight=20&originWidth=244&status=done&width=244)](https://www.npmjs.com/package/@femessage/export-excel) ![](https://img.shields.io/npm/v/@femessage/export-excel.svg#align=left&display=inline&height=20&originHeight=20&originWidth=148&status=done&width=148) [![](https://img.shields.io/npm/l/@femessage/export-excel.svg#align=left&display=inline&height=20&originHeight=20&originWidth=160&status=done&width=160)](https://github.com/FEMessage/export-excel/blob/master/LICENSE) ![](https://img.shields.io/badge/PRs-welcome-brightgreen.svg#align=left&display=inline&height=20&originHeight=20&originWidth=90&status=done&width=90) [![](https://img.shields.io/badge/%F0%9F%A4%96-release%20notes-00B2EE.svg#align=left&display=inline&height=20&originHeight=20&originWidth=104&status=done&width=104)](https://github-tools.github.io/github-release-notes/)
 
-Pure front-end import and export excel file
-<a name="65f5152b"></a>
+Pure front-end implemention of importing and exporting excel file
+
 ## Table of Contents
 
 - [Introduction](#introduction)
@@ -13,31 +13,30 @@ Pure front-end import and export excel file
 - [License](#license)
 - [Contributors](#contributors)
 
-<a name="Introduction"></a>
 ## Introduction
 
-The pure front-end implements import and export excel file. After testing, 10,000 data is exported, and the network request time is removed, the elapsed time of the export is less than 3 seconds.
+Pure front-end implemention of importing and exporting excel file. It can export 10,000 data in under 3 seconds, if not considering the  request travel time.
 
 [⬆ Back to Top](#table-of-contents)
 
-<a name="Documentation"></a>
 ## Documentation
 
-**[doc and online demo](https://femessage.github.io/excel-it/)**<br />[⬆ Back to Top](#table-of-contents)
+**[doc and online demo](https://femessage.github.io/excel-it/)**
 
-<a name="Install"></a>
+[⬆ Back to Top](#table-of-contents)
+
 ## Install
 
 ```sh
 yarn add @femessage/excel-it
 ```
 
-<a name="License"></a>
 ## License
 
-[MIT](./LICENSE)<br />[⬆ Back to Top](#table-of-contents)
+[MIT](./LICENSE)
 
-<a name="Contributors"></a>
+[⬆ Back to Top](#table-of-contents)
+
 ## Contributors
 
 Thanks goes to these wonderful people ([emoji key](https://allcontributors.org/docs/en/emoji-key)):
