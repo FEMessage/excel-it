@@ -7,7 +7,7 @@
       选择要导入有表头的 .xlsx 表格
     </el-button>
     <p>例如：</p>
-    <img src="https://raw.githubusercontent.com/FEMessage/excel-it/dev/styleguide/static/example-excel.png" alt="" style="height: 200px;">
+    <img src="https://cdn.nlark.com/yuque/0/2019/png/304775/1563350781876-9ff590fb-da40-4a13-a594-80299132e59c.png" alt="" style="height: 200px;">
     <p>table</p>
     <el-table v-bind="table">
       <el-table-column
