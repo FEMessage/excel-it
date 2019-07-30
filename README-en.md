@@ -1,27 +1,32 @@
 # excel-it
 
-
-![](https://cdn.nlark.com/yuque/0/2019/svg/224563/1561961436495-2947aa31-7bcb-4976-b3f9-ee7ce942dfe0.svg#align=left&display=inline&height=20&originHeight=20&originWidth=98&size=0&status=done&width=98) [![](https://img.shields.io/npm/dm/@femessage/export-excel.svg#align=left&display=inline&height=20&originHeight=20&originWidth=244&status=done&width=244)](https://www.npmjs.com/package/@femessage/export-excel) ![](https://img.shields.io/npm/v/@femessage/export-excel.svg#align=left&display=inline&height=20&originHeight=20&originWidth=148&status=done&width=148) [![](https://img.shields.io/npm/l/@femessage/export-excel.svg#align=left&display=inline&height=20&originHeight=20&originWidth=160&status=done&width=160)](https://github.com/FEMessage/export-excel/blob/master/LICENSE) ![](https://img.shields.io/badge/PRs-welcome-brightgreen.svg#align=left&display=inline&height=20&originHeight=20&originWidth=90&status=done&width=90) [![](https://img.shields.io/badge/%F0%9F%A4%96-release%20notes-00B2EE.svg#align=left&display=inline&height=20&originHeight=20&originWidth=104&status=done&width=104)](https://github-tools.github.io/github-release-notes/)
+[![Build Status](https://badgen.net/travis/FEMessage/excel-it/master)](https://travis-ci.com/FEMessage/excel-it)
+[![NPM Download](https://badgen.net/npm/dm/@femessage/excel-it)](https://www.npmjs.com/package/@femessage/excel-it)
+[![NPM Version](https://badgen.net/npm/v/@femessage/excel-it)](https://www.npmjs.com/package/@femessage/excel-it)
+[![NPM License](https://badgen.net/npm/license/@femessage/excel-it)](https://github.com/FEMessage/excel-it/blob/master/LICENSE)
+[![PRs Welcome](https://img.shields.io/badge/PRs-welcome-brightgreen.svg)](https://github.com/FEMessage/excel-it/pulls)
+[![Automated Release Notes by gren](https://img.shields.io/badge/%F0%9F%A4%96-release%20notes-00B2EE.svg)](https://github-tools.github.io/github-release-notes/)
 
 Pure front-end implemention of importing and exporting excel file
 
 ## Table of Contents
 
-- [Introduction](#introduction)
-- [Documentation](#documentation)
-- [Install](#install)
-- [License](#license)
-- [Contributors](#contributors)
+* [Introduction](#introduction)
+* [Links](#links)
+* [Install](#install)
+* [Contributing](#contributing)
+* [Contributors](#contributors)
+* [License](#license)
 
 ## Introduction
 
-Pure front-end implemention of importing and exporting excel file. It can export 10,000 data in under 3 seconds, if not considering the  request travel time.
+Pure front-end implemention of importing and exporting excel file. It can export 10,000 data in under 3 seconds, if not considering the request travel time.
 
 [⬆ Back to Top](#table-of-contents)
 
-## Documentation
+## Links
 
-**[doc and online demo](https://femessage.github.io/excel-it/)**
+* [docs](https://FEMessage.github.io/excel-it/)
 
 [⬆ Back to Top](#table-of-contents)
 
@@ -31,9 +36,16 @@ Pure front-end implemention of importing and exporting excel file. It can export
 yarn add @femessage/excel-it
 ```
 
-## License
+## Contributing
 
-[MIT](./LICENSE)
+For those who are interested in contributing to this project, such as:
+
+* report a bug
+* request new feature
+* fix a bug
+* implement a new feature
+
+Please refer to our [contributing guide](https://github.com/FEMessage/.github/blob/master/CONTRIBUTING.md).
 
 [⬆ Back to Top](#table-of-contents)
 
@@ -41,7 +53,17 @@ yarn add @femessage/excel-it
 
 Thanks goes to these wonderful people ([emoji key](https://allcontributors.org/docs/en/emoji-key)):
 
-| [![](https://avatars2.githubusercontent.com/u/47966933?v=4#alt=Barretem&width=100)<br />**Barretem**](https://github.com/Barretem)<br />[💻](https://github.com/FEMessage/excel-it/commits?author=Barretem) [📖](https://github.com/FEMessage/excel-it/commits?author=Barretem) | [![](https://avatars3.githubusercontent.com/u/26338853?v=4#alt=OuZuYu&width=100)<br />**OuZuYu**](http://67.216.223.155/resume/)<br />[💻](https://github.com/FEMessage/excel-it/commits?author=OuZuYu) [📖](https://github.com/FEMessage/excel-it/commits?author=OuZuYu) | [![](https://avatars3.githubusercontent.com/u/9384365?v=4#alt=levy&width=100)<br />**levy**](http://levy.work)<br />[👀](#review-levy9527) [🤔](#ideas-levy9527) |
-| --- | --- | --- |
+<!-- ALL-CONTRIBUTORS-LIST:START - Do not remove or modify this section -->
 
+<!-- prettier-ignore -->
+<table><tr><td align="center"><a href="https://github.com/Barretem"><img src="https://avatars2.githubusercontent.com/u/47966933?v=4" width="100px;" alt="Barretem"/><br /><sub><b>Barretem</b></sub></a><br /><a href="https://github.com/FEMessage/excel-it/commits?author=Barretem" title="Code">💻</a> <a href="https://github.com/FEMessage/excel-it/commits?author=Barretem" title="Documentation">📖</a></td><td align="center"><a href="http://67.216.223.155/resume/"><img src="https://avatars3.githubusercontent.com/u/26338853?v=4" width="100px;" alt="OuZuYu"/><br /><sub><b>OuZuYu</b></sub></a><br /><a href="https://github.com/FEMessage/excel-it/commits?author=OuZuYu" title="Code">💻</a> <a href="https://github.com/FEMessage/excel-it/commits?author=OuZuYu" title="Documentation">📖</a></td><td align="center"><a href="http://levy.work"><img src="https://avatars3.githubusercontent.com/u/9384365?v=4" width="100px;" alt="levy"/><br /><sub><b>levy</b></sub></a><br /><a href="#review-levy9527" title="Reviewed Pull Requests">👀</a> <a href="#ideas-levy9527" title="Ideas, Planning, & Feedback">🤔</a></td></tr></table>
 
+<!-- ALL-CONTRIBUTORS-LIST:END -->
+
+This project follows the [all-contributors](https://github.com/all-contributors/all-contributors) specification. Contributions of any kind welcome!
+
+## License
+
+[MIT](./LICENSE)
+
+[⬆ Back to Top](#table-of-contents)
