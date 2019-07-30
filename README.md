@@ -1,23 +1,24 @@
 # excel-it
 
-[![Build Status](https://travis-ci.com/FEMessage/export-excel.svg?branch=master)](https://travis-ci.com/FEMessage/export-excel)
-[![NPM Download](https://img.shields.io/npm/dm/@femessage/export-excel.svg)](https://www.npmjs.com/package/@femessage/export-excel)
-[![NPM Version](https://img.shields.io/npm/v/@femessage/export-excel.svg)](https://www.npmjs.com/package/@femessage/export-excel)
-[![NPM License](https://img.shields.io/npm/l/@femessage/export-excel.svg)](https://github.com/FEMessage/export-excel/blob/master/LICENSE)
-[![PRs Welcome](https://img.shields.io/badge/PRs-welcome-brightgreen.svg)](https://github.com/FEMessage/export-excel/pulls)
+[![Build Status](https://badgen.net/travis/FEMessage/excel-it/master)](https://travis-ci.com/FEMessage/excel-it)
+[![NPM Download](https://badgen.net/npm/dm/@femessage/excel-it)](https://www.npmjs.com/package/@femessage/excel-it)
+[![NPM Version](https://badgen.net/npm/v/@femessage/excel-it)](https://www.npmjs.com/package/@femessage/excel-it)
+[![NPM License](https://badgen.net/npm/license/@femessage/excel-it)](https://github.com/FEMessage/excel-it/blob/master/LICENSE)
+[![PRs Welcome](https://img.shields.io/badge/PRs-welcome-brightgreen.svg)](https://github.com/FEMessage/excel-it/pulls)
 [![Automated Release Notes by gren](https://img.shields.io/badge/%F0%9F%A4%96-release%20notes-00B2EE.svg)](https://github-tools.github.io/github-release-notes/)
 
 纯前端导入导出 excel
 
 [English](./README-en.md)
 
-## Table of Contents <!-- omit in toc -->
+## Table of Contents
 
 * [Introduction](#introduction)
-* [Documentation](#documentation)
+* [Links](#links)
 * [Install](#install)
-* [License](#license)
+* [Contributing](#contributing)
 * [Contributors](#contributors)
+* [License](#license)
 
 ## Introduction
 
@@ -25,9 +26,9 @@
 
 [⬆ Back to Top](#table-of-contents)
 
-## Documentation
+## Links
 
-**[doc and online demo](https://femessage.github.io/excel-it/)**
+* [docs](https://FEMessage.github.io/excel-it/)
 
 [⬆ Back to Top](#table-of-contents)
 
@@ -37,9 +38,16 @@
 yarn add @femessage/excel-it
 ```
 
-## License
+## Contributing
 
-[MIT](./LICENSE)
+For those who are interested in contributing to this project, such as:
+
+* report a bug
+* request new feature
+* fix a bug
+* implement a new feature
+
+Please refer to our [contributing guide](https://github.com/FEMessage/.github/blob/master/CONTRIBUTING.md).
 
 [⬆ Back to Top](#table-of-contents)
 
@@ -55,3 +63,9 @@ Thanks goes to these wonderful people ([emoji key](https://allcontributors.org/d
 <!-- ALL-CONTRIBUTORS-LIST:END -->
 
 This project follows the [all-contributors](https://github.com/all-contributors/all-contributors) specification. Contributions of any kind welcome!
+
+## License
+
+[MIT](./LICENSE)
+
+[⬆ Back to Top](#table-of-contents)
