@@ -1,6 +1,7 @@
-合并多个具有相同表头的sheet
-<br/>
-请导入具有多个sheet且多个sheet的表头相同的excel，若表头不同，则只返回第一个sheet的内容
+导入具有多个sheet且它们的表头相同的excel，若表头不同，则只返回第一个sheet的内容
+
+This example shows import an excel file containing multiple sheets with same header. If sheets' header are different, only the first sheet content will return
+
 
 ```vue
 <template>
@@ -21,7 +22,7 @@
 </template>
 
 <script>
-// 在你的组件中导入模块使用。如下所示
+// in real project, you should import function like this
 // import { importExcel } from '@femessage/excel-it'
 
 export default {

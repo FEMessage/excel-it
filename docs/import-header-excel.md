@@ -1,10 +1,12 @@
 导入有表头的excel，该例子将会忽略excel中A1到H1范围
 
+Import excel with header. This example ignore columns from A1 to H1
+
 ```vue
 <template>
   <div>
     <el-button type="success" @click="handleUpload">
-      选择要导入有表头的 .xlsx 表格
+      click to import
     </el-button>
     <p>例如：</p>
     <img src="https://cdn.nlark.com/yuque/0/2019/png/304775/1563350781876-9ff590fb-da40-4a13-a594-80299132e59c.png" alt="" style="height: 200px;">
@@ -21,7 +23,7 @@
 </template>
 
 <script>
-// 在你的组件中导入模块使用。如下所示
+// in real project, you should import function like this
 // import { importExcel } from '@femessage/excel-it'
 
 export default {
@@ -37,7 +39,7 @@ export default {
   methods: {
     handleUpload() {
       importExcel(['A1', 'H1'], arr => {
-        console.log('导入excel数据：', arr);
+        console.log('import data：', arr);
         if (!arr || !arr.length) {
           alert('请导入有内容的excel!')
           return

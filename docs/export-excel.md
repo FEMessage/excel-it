@@ -1,17 +1,19 @@
 导出excel，该例子有1w条数据来自接口。
 
+Here shows an example of export 10,000 rows data from api.
+
 ```vue
 <template>
   <el-button
     type="success"
     @click="handleExportExcel"
     style="padding: 8px 20px; cursor: pointer">
-    {{loading ? '加载中...' : '导出excel'}}
+    {{loading ? 'loading...' : 'export-excel'}}
   </el-button>
 </template>
 
 <script>
-// 在你的组件中导入模块使用。如下所示
+// in real project, you should import function like this
 // import { exportExcel } from '@femessage/excel-it'
 
 export default {
@@ -49,7 +51,6 @@ export default {
         })
         .then(resp => {
 
-          // 这里导出的是接口的数据，格式与this.data一致
           exportExcel({
             columns: this.columns,
             data: resp.data,

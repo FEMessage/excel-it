@@ -1,4 +1,4 @@
-导入excel
+Import excel example
 
 ```vue
 <template>
@@ -20,7 +20,7 @@
 </template>
 
 <script>
-// 在你的组件中导入模块使用。如下所示
+// in real project, you should import function like this
 // import { importExcel } from '@femessage/excel-it'
 
 export default {
