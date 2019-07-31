@@ -8,7 +8,7 @@
     "type": "git",
     "url": "https://github.com/FEMessage/excel-it.git"
   },
-  "keywords": ["vue", "sfc", "component"],
+  "keywords": ["excel", "excel-export", "excel-import"],
   "files": ["src", "dist"],
   "main": "dist/excel-it.umd.js",
   "module": "dist/excel-it.esm.js",
