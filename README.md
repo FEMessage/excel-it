@@ -7,9 +7,7 @@
 [![PRs Welcome](https://img.shields.io/badge/PRs-welcome-brightgreen.svg)](https://github.com/FEMessage/excel-it/pulls)
 [![Automated Release Notes by gren](https://img.shields.io/badge/%F0%9F%A4%96-release%20notes-00B2EE.svg)](https://github-tools.github.io/github-release-notes/)
 
-纯前端导入导出 excel
-
-[English](./README-en.md)
+import and export excel file using pure js
 
 ## Table of Contents
 
@@ -22,7 +20,7 @@
 
 ## Introduction
 
-纯前端实现导入导出 excel，经测试，1 万条数据导出，除去网络请求时间，导出的占用时间不超过 3 秒。
+Pure front-end implemention of importing and exporting excel file. It can export 10,000 data in under 3 seconds, if not considering the request travel time.
 
 [⬆ Back to Top](#table-of-contents)
 
