@@ -15,16 +15,7 @@ module.exports = {
   ribbon: {
     url: 'https://gitlab.com/fem-components/export-excel'
   },
-  sections: [
-    {
-      name: 'Api',
-      content: 'src/api.md'
-    },
-    {
-      name: 'Demo',
-      sections: demoSections
-    }
-  ],
+  sections: demoSections,
   webpackConfig: {
     module: {
       rules: [
