@@ -37,6 +37,11 @@ export default {
   },
   methods: {
     handleUpload() {
+      /**
+       * 受限于 styleguide 无法使用 import
+       * 因此在 styleguide 配置已经将
+       * `importExcel` 挂载到 `window`
+       */
       importExcel([], arr => {
         console.log('导入excel数据：', arr);
         if (!arr[0] || !arr[1]) {
