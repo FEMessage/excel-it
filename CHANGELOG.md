@@ -2,6 +2,15 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+## [3.1.0](https://github.com/FEMessage/excel-it/compare/v3.0.6...v3.1.0) (2019-10-16)
+
+
+### Features
+
+* **parseExcel:** 暴露解析 excel 文件函数 ([#26](https://github.com/FEMessage/excel-it/issues/26)) ([3d8cb82](https://github.com/FEMessage/excel-it/commit/3d8cb82))
+
+
+
 ### [3.0.6](https://github.com/FEMessage/excel-it/compare/v3.0.5...v3.0.6) (2019-07-05)
 
 

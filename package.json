@@ -1,6 +1,6 @@
 {
   "name": "@femessage/excel-it",
-  "version": "3.0.6",
+  "version": "3.1.0",
   "description": "",
   "author": "https://github.com/FEMessage",
   "license": "MIT",
@@ -8,8 +8,15 @@
     "type": "git",
     "url": "https://github.com/FEMessage/excel-it.git"
   },
-  "keywords": ["excel", "excel-export", "excel-import"],
-  "files": ["src", "dist"],
+  "keywords": [
+    "excel",
+    "excel-export",
+    "excel-import"
+  ],
+  "files": [
+    "src",
+    "dist"
+  ],
   "main": "dist/excel-it.umd.js",
   "module": "dist/excel-it.esm.js",
   "unpkg": "dist/excel-it.min.js",
