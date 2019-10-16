@@ -202,6 +202,22 @@ export function importExcel(ignore = [], callback = () => {}) {
     return false
   }
 
+  input.onchange = e => {
+    if (e.target.files && e.target.files.length) {
+      // 判断文件类型
+      const file = e.target.files[0]
+      // 重置上传文本框值
+      input.value = ''
+
+      parseExcel(file, ignore, callback)
+    }
+  }
+  setTimeout(() => {
+    click(input)
+  })
+}
+
+export function parseExcel(file, ignore = [], callback = () => {}) {
   /**
    * 根据文件名判断是否为excel文件
    * @param filename 文件名
@@ -213,28 +229,11 @@ export function importExcel(ignore = [], callback = () => {}) {
     return '.xls' === suffix || '.xlsx' === suffix
   }
 
-  input.onchange = e => {
-    if (e.target.files && e.target.files.length) {
-      // 判断文件类型
-      const file = e.target.files[0]
-      const filename = file.name
-      // 重置上传文本框值
-      input.value = ''
-
-      if (!checkExcelFile(filename)) {
-        alert('文件类型必须是.xlsx,xls中的一种')
-        return
-      }
-
-      parseExcel(file, ignore, callback)
-    }
+  if (!checkExcelFile(file.name)) {
+    alert('文件类型必须是.xlsx,xls中的一种')
+    return
   }
-  setTimeout(() => {
-    click(input)
-  })
-}
 
-export function parseExcel(file, ignore = [], callback = () => {}) {
   // 支持Safari6.0以上，Opera12.02以上，IE10以上，chrome7以上
   const reader = new FileReader()
   // 读取文件的 ArrayBuffer 数据对象 ArrayBuffer 对象用来表示通用的、固定长度的原始二进制数据缓冲区
