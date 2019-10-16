@@ -13,7 +13,7 @@ module.exports = {
   styleguideDir: 'docs',
   pagePerSection: true,
   ribbon: {
-    url: 'https://gitlab.com/fem-components/export-excel'
+    url: 'https://github.com/FEMessage/excel-it'
   },
   sections: demoSections,
   webpackConfig: {
