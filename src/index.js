@@ -226,119 +226,119 @@ export function importExcel(ignore = [], callback = () => {}) {
         alert('文件类型必须是.xlsx,xls中的一种')
         return
       }
-      // 支持Safari6.0以上，Opera12.02以上，IE10以上，chrome7以上
-      const reader = new FileReader()
-      // 读取文件的 ArrayBuffer 数据对象 ArrayBuffer 对象用来表示通用的、固定长度的原始二进制数据缓冲区
-      reader.readAsArrayBuffer(file)
 
-      /**
-       * 将ArrayBuffer 数据对象处理为字符串 http://javascript.ruanyifeng.com/stdlib/arraybuffer.html
-       * @param data ArrayBuffer 数据
-       */
-      const fixdata = data => {
-        let str = ''
-        let l = 0
-        const w = 10240
-        for (; l < data.byteLength / w; ++l) {
-          str += String.fromCharCode.apply(
-            null,
-            new Uint8Array(data.slice(l * w, l * w + w))
-          )
-        }
-        str += String.fromCharCode.apply(
-          null,
-          new Uint8Array(data.slice(l * w))
-        )
-        return str
-      }
-
-      /**
-       * 获取头部项
-       * @param sheet worksheet数据
-       * @return {Array}
-       */
-      const getHeaderRow = sheet => {
-        const headers = []
-        const range = XLSX.utils.decode_range(sheet[RANGE_KEY])
-        let C
-        const R = range.s.r
-        for (C = range.s.c; C <= range.e.c; ++C) {
-          const cell = sheet[XLSX.utils.encode_cell({c: C, r: R})]
-          if (cell && cell.t) {
-            headers.push(XLSX.utils.format_cell(cell))
-          }
-        }
-        return headers
-      }
-
-      // 解析excel 生成数组数据
-      function parseExcel(data) {
-        const fixedData = fixdata(data)
-        // btoa是binary to ascii 将binary的数据用ascii码表示
-        const workbook = XLSX.read(btoa(fixedData), {type: 'base64'})
-        // 读取多个sheet表
-        let sheetTable = []
-        const sheetList = workbook.Sheets
-        if (sheetList) {
-          Object.keys(sheetList).forEach(key => {
-            const worksheet = sheetList[key]
-            if (RANGE_KEY in worksheet) {
-              if (ignore && ignore.length) {
-                const wsRefArr = worksheet[RANGE_KEY].split(':')
-                const startCellRowNum = ignore[0].replace(/[a-zA-Z]+/, '') || 0
-                const startCellRowStr = ignore[0].replace(/[0-9]+/, '') || 'A'
-                const endCellRowNum = ignore[1].replace(/[a-zA-Z]+/, '') || 0
-                const maxNum =
-                  startCellRowNum > endCellRowNum
-                    ? startCellRowNum
-                    : endCellRowNum
-                worksheet[RANGE_KEY] = `${startCellRowStr}${+maxNum + 1}:${
-                  wsRefArr[1]
-                }`
-              }
-              // 将时间格式处理为字符串 todo 读取excel中date格式的时候，有时候t值会是'n', 而不是'd'，
-              // 通过判断cell中的t值为'n'的时候，判断'v'值是否跟'w'值是否相同来判断cell中的数值类型为date
-              Object.keys(worksheet).forEach(key => {
-                if (
-                  worksheet[key].t === 'd' ||
-                  (worksheet[key].t === 'n' &&
-                    String(worksheet[key].v) !== worksheet[key].w)
-                ) {
-                  worksheet[key].v = parseDate(worksheet[key].v)
-                }
-              })
-              const columns = getHeaderRow(worksheet) || []
-              const data = XLSX.utils.sheet_to_json(worksheet) || {}
-              sheetTable.push({
-                columns,
-                data
-              })
-            }
-          })
-        }
-        return sheetTable
-      }
-
-      reader.onload = e => {
-        let sheetTable = null
-        try {
-          sheetTable = parseExcel(e.target.result)
-        } catch (err) {
-          alert(IMPORT_ERR_MSG)
-        }
-
-        // callback在try外执行，否则callback报的错也会被catch
-        if (sheetTable !== null) {
-          callback(sheetTable)
-        }
-      }
-
-      reader.onerror = err => {
-        alert(IMPORT_ERR_MSG)
-      }
+      parseExcel(file, ignore, callback)
     }
   }
   setTimeout(() => {
     click(input)
   })
+}
+
+export function parseExcel(file, ignore = [], callback = () => {}) {
+  // 支持Safari6.0以上，Opera12.02以上，IE10以上，chrome7以上
+  const reader = new FileReader()
+  // 读取文件的 ArrayBuffer 数据对象 ArrayBuffer 对象用来表示通用的、固定长度的原始二进制数据缓冲区
+  reader.readAsArrayBuffer(file)
+
+  /**
+   * 将ArrayBuffer 数据对象处理为字符串 http://javascript.ruanyifeng.com/stdlib/arraybuffer.html
+   * @param data ArrayBuffer 数据
+   */
+  const fixdata = data => {
+    let str = ''
+    let l = 0
+    const w = 10240
+    for (; l < data.byteLength / w; ++l) {
+      str += String.fromCharCode.apply(
+        null,
+        new Uint8Array(data.slice(l * w, l * w + w))
+      )
+    }
+    str += String.fromCharCode.apply(null, new Uint8Array(data.slice(l * w)))
+    return str
+  }
+
+  /**
+   * 获取头部项
+   * @param sheet worksheet数据
+   * @return {Array}
+   */
+  const getHeaderRow = sheet => {
+    const headers = []
+    const range = XLSX.utils.decode_range(sheet[RANGE_KEY])
+    let C
+    const R = range.s.r
+    for (C = range.s.c; C <= range.e.c; ++C) {
+      const cell = sheet[XLSX.utils.encode_cell({c: C, r: R})]
+      if (cell && cell.t) {
+        headers.push(XLSX.utils.format_cell(cell))
+      }
+    }
+    return headers
+  }
+
+  // 解析excel 生成数组数据
+  function _parseExcel(data) {
+    const fixedData = fixdata(data)
+    // btoa是binary to ascii 将binary的数据用ascii码表示
+    const workbook = XLSX.read(btoa(fixedData), {type: 'base64'})
+    // 读取多个sheet表
+    let sheetTable = []
+    const sheetList = workbook.Sheets
+    if (sheetList) {
+      Object.keys(sheetList).forEach(key => {
+        const worksheet = sheetList[key]
+        if (RANGE_KEY in worksheet) {
+          if (ignore && ignore.length) {
+            const wsRefArr = worksheet[RANGE_KEY].split(':')
+            const startCellRowNum = ignore[0].replace(/[a-zA-Z]+/, '') || 0
+            const startCellRowStr = ignore[0].replace(/[0-9]+/, '') || 'A'
+            const endCellRowNum = ignore[1].replace(/[a-zA-Z]+/, '') || 0
+            const maxNum =
+              startCellRowNum > endCellRowNum ? startCellRowNum : endCellRowNum
+            worksheet[RANGE_KEY] = `${startCellRowStr}${+maxNum + 1}:${
+              wsRefArr[1]
+            }`
+          }
+          // 将时间格式处理为字符串 todo 读取excel中date格式的时候，有时候t值会是'n', 而不是'd'，
+          // 通过判断cell中的t值为'n'的时候，判断'v'值是否跟'w'值是否相同来判断cell中的数值类型为date
+          Object.keys(worksheet).forEach(key => {
+            if (
+              worksheet[key].t === 'd' ||
+              (worksheet[key].t === 'n' &&
+                String(worksheet[key].v) !== worksheet[key].w)
+            ) {
+              worksheet[key].v = parseDate(worksheet[key].v)
+            }
+          })
+          const columns = getHeaderRow(worksheet) || []
+          const data = XLSX.utils.sheet_to_json(worksheet) || {}
+          sheetTable.push({
+            columns,
+            data
+          })
+        }
+      })
+    }
+    return sheetTable
+  }
+
+  reader.onload = e => {
+    let sheetTable = null
+    try {
+      sheetTable = _parseExcel(e.target.result)
+    } catch (err) {
+      alert(IMPORT_ERR_MSG)
+    }
+
+    // callback在try外执行，否则callback报的错也会被catch
+    if (sheetTable !== null) {
+      callback(sheetTable)
+    }
+  }
+
+  reader.onerror = err => {
+    alert(IMPORT_ERR_MSG)
+  }
 }
