@@ -8,16 +8,8 @@
     "type": "git",
     "url": "https://github.com/FEMessage/excel-it.git"
   },
-  "keywords": [
-    "vue",
-    "sfc",
-    "component"
-  ],
-  "files": [
-    "src",
-    "dist",
-    "yarn.lock"
-  ],
+  "keywords": ["excel", "excel-export", "excel-import"],
+  "files": ["src", "dist"],
   "main": "dist/excel-it.umd.js",
   "module": "dist/excel-it.esm.js",
   "unpkg": "dist/excel-it.min.js",
@@ -68,7 +60,7 @@
   "publishConfig": {
     "access": "public"
   },
-  "vue-sfc-cli": "1.10.1",
+  "vue-sfc-cli": "1.10.6",
   "engines": {
     "node": ">= 4.0.0",
     "npm": ">= 3.0.0"

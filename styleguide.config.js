@@ -13,18 +13,9 @@ module.exports = {
   styleguideDir: 'docs',
   pagePerSection: true,
   ribbon: {
-    url: 'https://gitlab.com/fem-components/export-excel'
+    url: 'https://github.com/FEMessage/excel-it'
   },
-  sections: [
-    {
-      name: 'Api',
-      content: 'src/api.md'
-    },
-    {
-      name: 'Demo',
-      sections: demoSections
-    }
-  ],
+  sections: demoSections,
   webpackConfig: {
     module: {
       rules: [
