@@ -187,6 +187,17 @@ export function importExcel(ignore = [], callback = () => {}) {
     document.getElementsByTagName('body')[0].append(input)
   }
 
+  input.onchange = e => {
+    if (e.target.files && e.target.files.length) {
+      // 判断文件类型
+      const file = e.target.files[0]
+      // 重置上传文本框值
+      input.value = ''
+
+      parseExcel(file, ignore, callback)
+    }
+  }
+
   /**
    * 判断传入项是否在数组中
    * @param array
@@ -202,22 +213,40 @@ export function importExcel(ignore = [], callback = () => {}) {
     return false
   }
 
-  input.onchange = e => {
-    if (e.target.files && e.target.files.length) {
-      // 判断文件类型
-      const file = e.target.files[0]
-      // 重置上传文本框值
-      input.value = ''
-
-      parseExcel(file, ignore, callback)
-    }
-  }
   setTimeout(() => {
     click(input)
   })
 }
 
 export function parseExcel(file, ignore = [], callback = () => {}) {
+  if (!checkExcelFile(file.name)) {
+    alert('文件类型必须是.xlsx,xls中的一种')
+    return
+  }
+
+  // 支持Safari6.0以上，Opera12.02以上，IE10以上，chrome7以上
+  const reader = new FileReader()
+  // 读取文件的 ArrayBuffer 数据对象 ArrayBuffer 对象用来表示通用的、固定长度的原始二进制数据缓冲区
+  reader.readAsArrayBuffer(file)
+
+  reader.onload = e => {
+    let sheetTable = null
+    try {
+      sheetTable = _parseExcel(e.target.result)
+    } catch (err) {
+      alert(IMPORT_ERR_MSG)
+    }
+
+    // callback在try外执行，否则callback报的错也会被catch
+    if (sheetTable !== null) {
+      callback(sheetTable)
+    }
+  }
+
+  reader.onerror = () => {
+    alert(IMPORT_ERR_MSG)
+  }
+
   /**
    * 根据文件名判断是否为excel文件
    * @param filename 文件名
@@ -228,16 +257,6 @@ export function parseExcel(file, ignore = [], callback = () => {}) {
     const suffix = filename.substr(filename.lastIndexOf('.'))
     return '.xls' === suffix || '.xlsx' === suffix
   }
-
-  if (!checkExcelFile(file.name)) {
-    alert('文件类型必须是.xlsx,xls中的一种')
-    return
-  }
-
-  // 支持Safari6.0以上，Opera12.02以上，IE10以上，chrome7以上
-  const reader = new FileReader()
-  // 读取文件的 ArrayBuffer 数据对象 ArrayBuffer 对象用来表示通用的、固定长度的原始二进制数据缓冲区
-  reader.readAsArrayBuffer(file)
 
   /**
    * 将ArrayBuffer 数据对象处理为字符串 http://javascript.ruanyifeng.com/stdlib/arraybuffer.html
@@ -320,23 +339,5 @@ export function parseExcel(file, ignore = [], callback = () => {}) {
       })
     }
     return sheetTable
-  }
-
-  reader.onload = e => {
-    let sheetTable = null
-    try {
-      sheetTable = _parseExcel(e.target.result)
-    } catch (err) {
-      alert(IMPORT_ERR_MSG)
-    }
-
-    // callback在try外执行，否则callback报的错也会被catch
-    if (sheetTable !== null) {
-      callback(sheetTable)
-    }
-  }
-
-  reader.onerror = err => {
-    alert(IMPORT_ERR_MSG)
   }
 }
