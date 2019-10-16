@@ -34,7 +34,11 @@ export default {
     onDrop(e) {
       e.preventDefault()
 
-      // 解析 xlsx 文件
+      /**
+       * 受限于 styleguide 无法使用 import
+       * 因此在 styleguide 配置已经将
+       * `parseExcel` 挂载到 `window`
+       */
       parseExcel(e.dataTransfer.files[0], [], data => {
         const excelData = data[0] || {}
         this.columns = excelData.columns

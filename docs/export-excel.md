@@ -50,7 +50,11 @@ export default {
           return response.json()
         })
         .then(resp => {
-
+          /**
+           * 受限于 styleguide 无法使用 import
+           * 因此在 styleguide 配置已经将
+           * `exportExcel` 挂载到 `window`
+           */
           exportExcel({
             columns: this.columns,
             data: resp.data,
