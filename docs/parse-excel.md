@@ -17,6 +17,9 @@
 </template>
 
 <script>
+// In real project, you should import function like this
+// import { parseExcel } from '@femessage/excel-it'
+
 export default {
   name: 'ParseExcel',
 
@@ -30,6 +33,8 @@ export default {
   methods: {
     onDrop(e) {
       e.preventDefault()
+
+      // 解析 xlsx 文件
       parseExcel(e.dataTransfer.files[0], [], data => {
         const excelData = data[0] || {}
         this.columns = excelData.columns
