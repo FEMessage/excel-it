@@ -39,6 +39,16 @@
         "review",
         "ideas"
       ]
+    },
+    {
+      "login": "eviIIt",
+      "name": "EVILLT",
+      "avatar_url": "https://avatars1.githubusercontent.com/u/53422750?v=4",
+      "profile": "https://saika.dev",
+      "contributions": [
+        "code",
+        "doc"
+      ]
     }
   ],
   "contributorsPerLine": 7
