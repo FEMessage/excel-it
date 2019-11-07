@@ -9,6 +9,8 @@
 
 import and export excel file using pure js
 
+[中文文档](./README-zh.md)
+
 ## Table of Contents
 
 * [Introduction](#introduction)

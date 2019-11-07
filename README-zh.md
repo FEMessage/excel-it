@@ -9,8 +9,6 @@
 
 纯前端导入导出 excel
 
-[English](./README-en.md)
-
 ## Table of Contents
 
 * [Introduction](#introduction)
