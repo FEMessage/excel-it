@@ -5,14 +5,12 @@ language: node_js
 node_js:
 - lts/*
 git:
-  depth: 3
+  depth: 30
 install:
 - yarn --frozen-lockfile
 - yarn test
 script:
 - ./build.sh
-after_success:
-- GREN_GITHUB_TOKEN=$GITHUB_TOKEN yarn release
 after_script:
 - ./notify.sh
 cache: yarn
