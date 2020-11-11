@@ -2,6 +2,15 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+## [3.2.0](https://github.com/FEMessage/excel-it/compare/v3.1.1...v3.2.0) (2020-11-11)
+
+
+### Features
+
+* add types ([#41](https://github.com/FEMessage/excel-it/issues/41)) ([b911538](https://github.com/FEMessage/excel-it/commit/b911538))
+
+
+
 ### [3.1.1](https://github.com/FEMessage/excel-it/compare/v3.1.0...v3.1.1) (2020-08-13)
 
 
